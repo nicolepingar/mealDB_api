@@ -19,10 +19,6 @@ Recipe.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        ingredients: { //!!!
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
         instructions: {
             type: DataTypes.TEXT,
             allowNull: false,
@@ -31,13 +27,89 @@ Recipe.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        image: { //!!
+        image: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        measurements: { //!!
-            type: DataTypes.STRING,
+        ingredients1: {
+            type: DataTypes.ENUM,
             allowNull: false,
+        },
+        ingredients2: {
+            type: DataTypes.ENUM,
+            allowNull: true,
+        },
+        ingredients3: {
+            type: DataTypes.ENUM,
+            allowNull: true,
+        },
+        ingredients4: {
+            type: DataTypes.ENUM,
+            allowNull: true,
+        },
+        ingredients5: {
+            type: DataTypes.ENUM,
+            allowNull: true,
+        },
+        ingredients6: {
+            type: DataTypes.ENUM,
+            allowNull: true,
+        },
+        ingredients7: {
+            type: DataTypes.ENUM,
+            allowNull: true,
+        },
+        ingredients8: {
+            type: DataTypes.ENUM,
+            allowNull: true,
+        },
+        ingredients9: {
+            type: DataTypes.ENUM,
+            allowNull: true,
+        },
+        ingredients10: {
+            type: DataTypes.ENUM,
+            allowNull: true,
+        },
+        ingredients11: {
+            type: DataTypes.ENUM,
+            allowNull: true,
+        },
+        ingredients12: {
+            type: DataTypes.ENUM,
+            allowNull: true,
+        },
+        ingredients13: {
+            type: DataTypes.ENUM,
+            allowNull: true,
+        },
+        ingredients14: {
+            type: DataTypes.ENUM,
+            allowNull: true,
+        },
+        ingredients15: {
+            type: DataTypes.ENUM,
+            allowNull: true,
+        },
+        ingredients16: {
+            type: DataTypes.ENUM,
+            allowNull: true,
+        },
+        ingredients17: {
+            type: DataTypes.ENUM,
+            allowNull: true,
+        },
+        ingredients18: {
+            type: DataTypes.ENUM,
+            allowNull: true,
+        },
+        ingredients19: {
+            type: DataTypes.ENUM,
+            allowNull: true,
+        },
+        ingredients20: {
+            type: DataTypes.ENUM,
+            allowNull: true,
         },
     },
     {
@@ -50,5 +122,3 @@ Recipe.init(
 );
 
 module.exports = Recipe;
-
-// area, category, ingredients? (up to 20), instructions, meal (name), meal thumb, measurements
