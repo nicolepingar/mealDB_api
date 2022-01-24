@@ -13,7 +13,8 @@ function getMeal(mealInput) {
         })
         .then(function (data) { // data = API data
             console.log(data.meals);
-            for (let i = 0; i < data.meals.length; i++) { // loop through API data to create a button for each recipe
+            // loop through API data to create a button for each recipe
+            for (let i = 0; i < data.meals.length; i++) {
                 const recipeName = data.meals[i].strMeal;
                 const recipeId = data.meals[i].idMeal;
                 const mealButton = document.createElement('button');
@@ -25,13 +26,16 @@ function getMeal(mealInput) {
                 breakVar.appendChild(mealButton);
                 recipesAppend.appendChild(breakVar);
             }
+            // event to add recipe to database
             const addButtonHandler = async (event) => {
                 event.preventDefault();
+                // if the button clicked had the attribute 'data-id' 
                 if (event.target.hasAttribute('data-id')) {
+                    // then assign value to idButton variable
                     const idButton = event.target.getAttribute('data-id');
                     let idk = ''
                     let index = ''
-                    for (let i = 0; i < data.meals.length; i++) {
+                    for (let i = 0; i < data.meals.length; i++) { // loop through API data and assign values to data that matches button clicked 
                         if (data.meals[i].idMeal === idButton) {
                             idk = data.meals[i].idMeal;
                             index = i;
@@ -44,7 +48,7 @@ function getMeal(mealInput) {
                     const name = data.meals[index].strMeal;
                     const image = data.meals[index].strMealThumb;
                     const ingredients1 = data.meals[index].strMeasure1
-
+                    // post request to add clicked recipe to database 
                     const response = await fetch('/api/recipes', {
                         method: 'POST',
                         body: JSON.stringify({ id, area, category, instructions, name, image, ingredients1 }),
@@ -53,9 +57,9 @@ function getMeal(mealInput) {
                         },
                     });
                     if (response.ok) {
-                        document.location.reload();
+                        document.location.reload(); // if response is ok, reload page
                     } else {
-                        alert('Failed to add recipe.');
+                        alert('Failed to add recipe.'); // if response is not ok, alert user
                     }
                 }
             };
