@@ -24,17 +24,11 @@ function getMeal(mealInput) {
                 var recipesAppend = document.querySelector('.recipes');
                 breakVar.appendChild(mealButton);
                 recipesAppend.appendChild(breakVar);
-
-
-
-
-
             }
-            const addButtonHandler = (event) => {
+            const addButtonHandler = async (event) => {
                 event.preventDefault();
                 if (event.target.hasAttribute('data-id')) {
                     const idButton = event.target.getAttribute('data-id');
-                    console.log("idButton", idButton);
                     let idk = ''
                     let index = ''
                     for (let i = 0; i < data.meals.length; i++) {
@@ -43,39 +37,33 @@ function getMeal(mealInput) {
                             index = i;
                         }
                     }
-                    console.log("idk", idk);
                     const id = idk;
-                    const area = data.meals[i].strArea;
-                    const category = data.meals[i].strCategory;
-                    const instructions = data.meals[i].strInstructions;
-                    const name = data.meals[i].strMeal;
-                    const image = data.meals[i].strMealThumb;
-                    const ingredients1 = (data.meals[i].strMeasure1, data.meals[i].strIngredient1);
+                    const area = data.meals[index].strArea;
+                    const category = data.meals[index].strCategory;
+                    const instructions = data.meals[index].strInstructions;
+                    const name = data.meals[index].strMeal;
+                    const image = data.meals[index].strMealThumb;
+                    const ingredients1 = data.meals[index].strMeasure1
 
-
-                    // const response = await fetch('/api/recipes', {
-                    //     method: 'POST',
-                    //     body: JSON.stringify({ id, area, category, instructions, name, image, ingredients1 }),
-                    //     headers: {
-                    //         'Content-Type': 'application/json',
-                    //     },
-                    // });
-                    // if (response.ok) {
-                    //     document.location.reload();
-                    // } else {
-                    //     alert('Failed to add recipe.');
-                    // }
+                    const response = await fetch('/api/recipes', {
+                        method: 'POST',
+                        body: JSON.stringify({ id, area, category, instructions, name, image, ingredients1 }),
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                    });
+                    if (response.ok) {
+                        document.location.reload();
+                    } else {
+                        alert('Failed to add recipe.');
+                    }
                 }
             };
             // loops through all buttons with "addButton" class 
             const addButton = document.querySelectorAll('button');
-            // for (let j = 0; j < addButton.length; j++) {
-            //     addButton[j].addEventListener('click', addButtonHandler);
-            // }
             addButton.forEach(element => {
                 element.addEventListener('click', addButtonHandler);
             });
-            // document.getElementsByClassName(`addButton${recipeId}`).addEventListener('click', addButtonHandler)
         })
 };
 // submit button on click, call formSubmit function

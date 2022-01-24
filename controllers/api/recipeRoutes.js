@@ -10,9 +10,9 @@ router.post('/', async (req, res) => {
             instructions: req.body.instructions,
             name: req.body.name,
             image: req.body.image,
-            ingredients1: req.body.ingredients1,
+            ingredients1: req.body.ingredients1
         })
-        res.status(200).json("STATUS GOOD!!!!!!!!!!!!!!!!", recipeData)
+        res.status(200).json(recipeData)
     }
     catch (err) {
         console.log(err);

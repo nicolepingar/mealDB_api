@@ -32,84 +32,83 @@ Recipe.init(
             allowNull: false,
         },
         ingredients1: {
-            type: DataTypes.ENUM('value1', 'value2'),
+            type: DataTypes.STRING,
             allowNull: false,
         },
         ingredients2: {
-            type: DataTypes.ENUM('value1', 'value2'),
+            type: DataTypes.STRING,
             allowNull: true,
         },
         ingredients3: {
-            type: DataTypes.ENUM('value1', 'value2'),
+            type: DataTypes.STRING,
             allowNull: true,
         },
         ingredients4: {
-            type: DataTypes.ENUM('value1', 'value2'),
+            type: DataTypes.STRING,
             allowNull: true,
         },
         ingredients5: {
-            type: DataTypes.ENUM('value1', 'value2'),
+            type: DataTypes.STRING,
             allowNull: true,
         },
         ingredients6: {
-            type: DataTypes.ENUM('value1', 'value2'),
+            type: DataTypes.STRING,
             allowNull: true,
         },
         ingredients7: {
-            type: DataTypes.ENUM('value1', 'value2'),
+            type: DataTypes.STRING,
             allowNull: true,
         },
         ingredients8: {
-            type: DataTypes.ENUM('value1', 'value2'),
+            type: DataTypes.STRING,
             allowNull: true,
         },
         ingredients9: {
-            type: DataTypes.ENUM('value1', 'value2'),
+            type: DataTypes.STRING,
             allowNull: true,
         },
         ingredients10: {
-            type: DataTypes.ENUM('value1', 'value2'),
+            type: DataTypes.STRING,
             allowNull: true,
         },
         ingredients11: {
-            type: DataTypes.ENUM('value1', 'value2'),
+            type: DataTypes.STRING,
             allowNull: true,
         },
         ingredients12: {
-            type: DataTypes.ENUM('value1', 'value2'),
+            type: DataTypes.STRING,
             allowNull: true,
         },
         ingredients13: {
-            type: DataTypes.ENUM('value1', 'value2'),
+            type: DataTypes.STRING,
             allowNull: true,
         },
         ingredients14: {
-            type: DataTypes.ENUM('value1', 'value2'),
+            type: DataTypes.STRING,
             allowNull: true,
         },
         ingredients15: {
-            type: DataTypes.ENUM('value1', 'value2'),
+            type: DataTypes.STRING,
             allowNull: true,
         },
         ingredients16: {
-            type: DataTypes.ENUM('value1', 'value2'),
+            type: DataTypes.STRING,
             allowNull: true,
         },
         ingredients17: {
-            type: DataTypes.ENUM('value1', 'value2'),
+            type: DataTypes.STRING,
             allowNull: true,
         },
         ingredients18: {
-            type: DataTypes.ENUM('value1', 'value2'),
+            type: DataTypes.STRING,
             allowNull: true,
         },
         ingredients19: {
-            type: DataTypes.ENUM('value1', 'value2'),
+            type: DataTypes.STRING,
             allowNull: true,
         },
         ingredients20: {
-            type: DataTypes.ENUM('value1', 'value2'),
-            allowNull: true,
+            type: DataTypes.STRING, allowNull: true,
         },
     },
     {
