@@ -18,7 +18,6 @@ router.get('/recipe-search', (req, res) => {
         }
     }).then((recipeData) => {
         res.json(recipeData);
-        console.log("recipe data!!!!!!!!!!!!!", recipeData)
     }).catch((err) => res.json(err));;
 });
 

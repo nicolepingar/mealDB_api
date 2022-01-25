@@ -1,3 +1,8 @@
+// Materialize select dropdown
+document.addEventListener('DOMContentLoaded', function () {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems);
+});
 // when forms submitted, assign letter value to mealInput variable and call getMeal function with parameter
 function formSubmit(event) {
     event.preventDefault();
@@ -21,7 +26,7 @@ function getMeal(mealInput) {
                 const breakVar = document.createElement('div');
                 mealButton.innerHTML = "Click to add " + recipeName + " to the database.";
                 mealButton.setAttribute('data-id', recipeId);
-                mealButton.setAttribute('class', `addButton`);
+                mealButton.setAttribute('class', `addButton waves-effect waves-teal btn-flat`);
                 var recipesAppend = document.querySelector('.recipes');
                 breakVar.appendChild(mealButton);
                 recipesAppend.appendChild(breakVar);

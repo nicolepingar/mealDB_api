@@ -9,7 +9,6 @@ const newFormHandler = async (event) => {
             },
         });
         if (response.ok) {
-            console.log("hello world")
         } else {
             alert('Failed to search.');
         }
