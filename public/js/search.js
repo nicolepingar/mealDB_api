@@ -2,13 +2,14 @@ const newFormHandler = async (event) => {
     event.preventDefault();
     const ingredients1 = document.querySelector('#recipe').value.trim();
     if (ingredients1) {
-        const response = await fetch('/recipe-search', {
+        const response = await fetch('/search', ingredients1, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
             },
         });
         if (response.ok) {
+
         } else {
             alert('Failed to search.');
         }

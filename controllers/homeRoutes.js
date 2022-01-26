@@ -9,16 +9,22 @@ router.get('/search', async (req, res) => {
     res.render('search');
 });
 // get recipes that match 
-router.get('/recipe-search', (req, res) => {
-    const query = req.params;
-    console.log(query);
-    Recipe.findAll({
-        where: {
-            ingredients1: query
+router.get('/search', async (req, res) => {
+    try {
+        const query = req.params;
+        const data = await Recipe.findAll({
+            where: {
+                ingredients1: query
+            }
+        });
+        if (!data) { // do we need this?
+            res.status(404).json({ message: 'No recipe found with that ingredient!' });
+            return;
         }
-    }).then((recipeData) => {
-        res.json(recipeData);
-    }).catch((err) => res.json(err));;
+        res.render('search');
+    } catch (err) {
+        res.status(500).json(err);
+    }
 });
 
 module.exports = router;
