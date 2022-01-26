@@ -52,7 +52,7 @@ function getMeal(mealInput) {
                     const instructions = data.meals[index].strInstructions;
                     const name = data.meals[index].strMeal;
                     const image = data.meals[index].strMealThumb;
-                    const ingredients1 = data.meals[index].strMeasure1
+                    const ingredients1 = data.meals[index].strMeasure1 //!!!! must add all ingredients
                     // post request to add clicked recipe to database 
                     const response = await fetch('/api/recipes', {
                         method: 'POST',
