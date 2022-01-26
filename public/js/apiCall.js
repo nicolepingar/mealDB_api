@@ -52,7 +52,26 @@ function getMeal(mealInput) {
                     const instructions = data.meals[index].strInstructions;
                     const name = data.meals[index].strMeal;
                     const image = data.meals[index].strMealThumb;
-                    const ingredients1 = data.meals[index].strMeasure1 //!!!! must add all ingredients
+                    const ingredients1 = data.meals[index].strIngredient1;
+                    const ingredients2 = data.meals[index].strIngredient2;
+                    const ingredients3 = data.meals[index].strIngredient3;
+                    const ingredients4 = data.meals[index].strIngredient4;
+                    const ingredients5 = data.meals[index].strIngredient5;
+                    const ingredients6 = data.meals[index].strIngredient6;
+                    const ingredients7 = data.meals[index].strIngredient7;
+                    const ingredients8 = data.meals[index].strIngredient8;
+                    const ingredients9 = data.meals[index].strIngredient9;
+                    const ingredients10 = data.meals[index].strIngredient10;
+                    const ingredients11 = data.meals[index].strIngredient11;
+                    const ingredients12 = data.meals[index].strIngredient12;
+                    const ingredients13 = data.meals[index].strIngredient13;
+                    const ingredients14 = data.meals[index].strIngredient14;
+                    const ingredients15 = data.meals[index].strIngredient15;
+                    const ingredients16 = data.meals[index].strIngredient16;
+                    const ingredients17 = data.meals[index].strIngredient17;
+                    const ingredients18 = data.meals[index].strIngredient18;
+                    const ingredients19 = data.meals[index].strIngredient19;
+                    const ingredients20 = data.meals[index].strIngredient20;
                     // post request to add clicked recipe to database 
                     const response = await fetch('/api/recipes', {
                         method: 'POST',
