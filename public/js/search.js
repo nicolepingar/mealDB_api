@@ -1,10 +1,10 @@
 const newFormHandler = async (event) => {
     event.preventDefault();
-    const ingredients1 = document.querySelector('#recipe').value.trim();
-    if (ingredients1) {
-        const response = await fetch('/search', {
+    const ingredients = document.querySelector('#recipe').value;
+    if (ingredients) {
+        const response = await fetch('/api/searchRecipes', {
             method: 'POST',
-            body: JSON.stringify({ ingredients1 }),
+            body: JSON.stringify({ ingredients }),
             headers: {
                 'Content-Type': 'application/json',
             },
