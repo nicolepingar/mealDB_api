@@ -72,10 +72,77 @@ function getMeal(mealInput) {
                     const ingredients18 = data.meals[index].strIngredient18;
                     const ingredients19 = data.meals[index].strIngredient19;
                     const ingredients20 = data.meals[index].strIngredient20;
+                    const meas1 = data.meals[index].strMeasure1;
+                    const meas2 = data.meals[index].strMeasure2;
+                    const meas3 = data.meals[index].strMeasure3;
+                    const meas4 = data.meals[index].strMeasure4;
+                    const meas5 = data.meals[index].strMeasure5;
+                    const meas6 = data.meals[index].strMeasure6;
+                    const meas7 = data.meals[index].strMeasure7;
+                    const meas8 = data.meals[index].strMeasure8;
+                    const meas9 = data.meals[index].strMeasure9;
+                    const meas10 = data.meals[index].strMeasure10;
+                    const meas11 = data.meals[index].strMeasure11;
+                    const meas12 = data.meals[index].strMeasure12;
+                    const meas13 = data.meals[index].strMeasure13;
+                    const meas14 = data.meals[index].strMeasure14;
+                    const meas15 = data.meals[index].strMeasure15;
+                    const meas16 = data.meals[index].strMeasure16;
+                    const meas17 = data.meals[index].strMeasure17;
+                    const meas18 = data.meals[index].strMeasure18;
+                    const meas19 = data.meals[index].strMeasure19;
+                    const meas20 = data.meals[index].strMeasure20;
                     // post request to add clicked recipe to database 
                     const response = await fetch('/api/recipes', {
                         method: 'POST',
-                        body: JSON.stringify({ id, area, category, instructions, name, image, ingredients1 }),
+                        body: JSON.stringify({
+                            id,
+                            area,
+                            category,
+                            instructions,
+                            name,
+                            image,
+                            ingredients1,
+                            ingredients2,
+                            ingredients3,
+                            ingredients4,
+                            ingredients5,
+                            ingredients6,
+                            ingredients7,
+                            ingredients8,
+                            ingredients9,
+                            ingredients10,
+                            ingredients11,
+                            ingredients12,
+                            ingredients13,
+                            ingredients14,
+                            ingredients15,
+                            ingredients16,
+                            ingredients17,
+                            ingredients18,
+                            ingredients19,
+                            ingredients20,
+                            meas1,
+                            meas2,
+                            meas3,
+                            meas4,
+                            meas5,
+                            meas6,
+                            meas7,
+                            meas8,
+                            meas9,
+                            meas10,
+                            meas11,
+                            meas12,
+                            meas13,
+                            meas14,
+                            meas15,
+                            meas16,
+                            meas17,
+                            meas18,
+                            meas19,
+                            meas20,
+                        }),
                         headers: {
                             'Content-Type': 'application/json',
                         },
