@@ -1,22 +1,45 @@
 const router = require('express').Router();
 const Recipe = require('../../models/Recipe');
-const { Op } = require("sequelize"); //{ [Op.eq]: req.body.ingredients }
+const { Op } = require("sequelize"); //{ [Op.eq]: req.body.ingredients }   where: { ingredients1: { [Op.eq]: req.body.ingredients } }
 
 router.post('/', async (req, res) => {
     try {
         const ingData = await Recipe.findAll(
             {
-                where:
-                    { ingredients1: req.body.ingredients }
+                where: {
+                    [Op.or]: { ingredients1: req.body.ingredients },
+                    [Op.or]: { ingredients2: req.body.ingredients },
+                    [Op.or]: { ingredients3: req.body.ingredients },
+                    [Op.or]: { ingredients4: req.body.ingredients },
+                    [Op.or]: { ingredients5: req.body.ingredients },
+                    [Op.or]: { ingredients6: req.body.ingredients },
+                    [Op.or]: { ingredients7: req.body.ingredients },
+                    [Op.or]: { ingredients8: req.body.ingredients },
+                    [Op.or]: { ingredients9: req.body.ingredients },
+                    [Op.or]: { ingredients10: req.body.ingredients },
+                    [Op.or]: { ingredients11: req.body.ingredients },
+                    [Op.or]: { ingredients12: req.body.ingredients },
+                    [Op.or]: { ingredients13: req.body.ingredients },
+                    [Op.or]: { ingredients14: req.body.ingredients },
+                    [Op.or]: { ingredients15: req.body.ingredients },
+                    [Op.or]: { ingredients16: req.body.ingredients },
+                    [Op.or]: { ingredients17: req.body.ingredients },
+                    [Op.or]: { ingredients18: req.body.ingredients },
+                    [Op.or]: { ingredients19: req.body.ingredients },
+                    [Op.or]: { ingredients20: req.body.ingredients },
+                },
             });
-        res.status(200).json(ingData);
-        console.log(ingData);
+        console.log(ingData.length);
+        const banana = ingData.map((bananas) => bananas.get({ plain: true }));
+        // console.log('banana', banana);
+        res.render('search', {
+            banana,
+        });
+        //res.status(200).json(ingData);
     } catch (err) {
         console.log(err);
         res.status(400).json(err);
     }
-
-
 });
 
 module.exports = router;
