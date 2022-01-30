@@ -1,8 +1,17 @@
 <div class="row">
+
     <form class="col s6">
         <input id="recipe" type="text"></input>
         <label for="recipe">Search for a recipe based on an ingredient</label> <br>
         <button type="submit" class="form-submit waves-effect waves-light btn">Submit</button>
     </form>
-    <script src="/js/search.js"></script>
+
+    <div class="col s6">
+        {{#each banana as |bananas|}}
+        <div>{{id}}</div>
+        <div>{{name}}</div>
+        {{/each}}
+    </div>
+
 </div>
+<script src="/js/search.js"></script>

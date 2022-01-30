@@ -1,7 +1,14 @@
+// const { col } = require("sequelize/dist");
+
 // Materialize select dropdown
 document.addEventListener('DOMContentLoaded', function () {
     var elems = document.querySelectorAll('select');
     var instances = M.FormSelect.init(elems);
+});
+// Materialize collapsible 
+document.addEventListener("DOMContentLoaded", function () {
+    var elems = document.querySelectorAll(".collapsible");
+    var instances = M.Collapsible.init(elems);
 });
 // when forms submitted, assign letter value to mealInput variable and call getMeal function with parameter
 function formSubmit(event) {
@@ -22,14 +29,66 @@ function getMeal(mealInput) {
             for (let i = 0; i < data.meals.length; i++) {
                 const recipeName = data.meals[i].strMeal;
                 const recipeId = data.meals[i].idMeal;
+                const recipeI1 = data.meals[i].strIngredient1;
+                const recipeI2 = data.meals[i].strIngredient2;
+                const recipeI3 = data.meals[i].strIngredient3;
+                const recipeI4 = data.meals[i].strIngredient4;
+                const recipeI5 = data.meals[i].strIngredient5;
+                const recipeI6 = data.meals[i].strIngredient6;
+                const recipeI7 = data.meals[i].strIngredient7;
+                const recipeI8 = data.meals[i].strIngredient8;
+                const recipeI9 = data.meals[i].strIngredient9;
+                const recipeI10 = data.meals[i].strIngredient10;
+                const recipeI11 = data.meals[i].strIngredient11;
+                const recipeI12 = data.meals[i].strIngredient12;
+                const recipeI13 = data.meals[i].strIngredient13;
+                const recipeI14 = data.meals[i].strIngredient14;
+                const recipeI15 = data.meals[i].strIngredient15;
+                const recipeI16 = data.meals[i].strIngredient16;
+                const recipeI17 = data.meals[i].strIngredient17;
+                const recipeI18 = data.meals[i].strIngredient18;
+                const recipeI19 = data.meals[i].strIngredient19;
+                const recipeI20 = data.meals[i].strIngredient20;
+                const mea1 = data.meals[i].strMeasure1;
+                const mea2 = data.meals[i].strMeasure2;
+                const mea3 = data.meals[i].strMeasure3;
+                const mea4 = data.meals[i].strMeasure4;
+                const mea5 = data.meals[i].strMeasure5;
+                const mea6 = data.meals[i].strMeasure6;
+                const mea7 = data.meals[i].strMeasure7;
+                const mea8 = data.meals[i].strMeasure8;
+                const mea9 = data.meals[i].strMeasure9;
+                const mea10 = data.meals[i].strMeasure10;
+                const mea11 = data.meals[i].strMeasure11;
+                const mea12 = data.meals[i].strMeasure12;
+                const mea13 = data.meals[i].strMeasure13;
+                const mea14 = data.meals[i].strMeasure14;
+                const mea15 = data.meals[i].strMeasure15;
+                const mea16 = data.meals[i].strMeasure16;
+                const mea17 = data.meals[i].strMeasure17;
+                const mea18 = data.meals[i].strMeasure18;
+                const mea19 = data.meals[i].strMeasure19;
+                const mea20 = data.meals[i].strMeasure20;
+                const instr = data.meals[i].strInstructions;
+                const cat = data.meals[i].strCategory;
+                const listEl = document.createElement('li');
+                const collapsHead = document.createElement('div');
                 const mealButton = document.createElement('button');
-                const breakVar = document.createElement('div');
-                mealButton.innerHTML = "Click to add " + recipeName + " to the database.";
+                const collapsBody = document.createElement('div');
+                listEl.setAttribute('class', 'list-el');
+                collapsHead.setAttribute('class', 'collapsible-header');
+                collapsBody.setAttribute('class', 'collapsible-body')
                 mealButton.setAttribute('data-id', recipeId);
                 mealButton.setAttribute('class', `addButton waves-effect waves-teal btn-flat`);
-                var recipesAppend = document.querySelector('.recipes');
-                breakVar.appendChild(mealButton);
-                recipesAppend.appendChild(breakVar);
+                // const breakVar = document.createElement('div');
+                collapsHead.innerHTML = recipeName;
+                mealButton.innerHTML = "Click to add " + recipeName + " to the database.";
+                var recipesAppend = document.querySelector('.collapsible');
+                collapsBody.appendChild(mealButton);
+                listEl.appendChild(collapsHead);
+                listEl.appendChild(collapsBody);
+                // breakVar.appendChild(mealButton);
+                recipesAppend.appendChild(listEl);
             }
             // event to add recipe to database
             const addButtonHandler = async (event) => {
@@ -148,7 +207,7 @@ function getMeal(mealInput) {
                         },
                     });
                     if (response.ok) {
-                        document.location.reload(); // if response is ok, reload page
+                        alert(`${data.meals[index].strMeal} added to the database.`)
                     } else {
                         alert('Failed to add recipe.'); // if response is not ok, alert user
                     }

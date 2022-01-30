@@ -1,9 +1,10 @@
 const newFormHandler = async (event) => {
     event.preventDefault();
-    const ingredients = document.querySelector('#recipe').value;
+    const ingredientsVal = document.querySelector('#recipe').value;
+    const ingredients = ingredientsVal.charAt(0).toUpperCase() + ingredientsVal.slice(1);
     console.log(ingredients);
     if (ingredients) {
-        const response = await fetch('/api/searchRecipes', {
+        const response = await fetch('/search', {
             method: 'POST',
             body: JSON.stringify({ ingredients }),
             headers: {
