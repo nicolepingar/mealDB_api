@@ -218,7 +218,6 @@ function getMeal(mealInput) {
                     // post request to add clicked recipe to database 
                     const response = await fetch('/api/recipes', {
                         method: 'POST',
-                        mode: 'cors',
                         body: JSON.stringify({
                             id,
                             area,
