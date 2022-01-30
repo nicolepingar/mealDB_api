@@ -11,6 +11,7 @@ const newFormHandler = async (event) => {
     if (ingredients) {
         const response = await fetch('/search', { // fetches db route
             method: 'POST',
+            mode: 'cors',
             body: JSON.stringify({ ingredients }), // sends ingredient as body
             headers: {
                 'Content-Type': 'application/json',
