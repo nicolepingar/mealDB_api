@@ -5,10 +5,6 @@ const { Op } = require("sequelize");
 router.get('/', async (req, res) => {
     res.render('home');
 });
-// renders search page
-router.get('/search', async (req, res) => {
-    res.render('search');
-});
 
 router.post('/search', async (req, res) => {
     try {
@@ -40,13 +36,19 @@ router.post('/search', async (req, res) => {
         console.log(ingData.length);
         const banana = ingData.map((bananas) => bananas.get({ plain: true }));
         console.log('banana', banana);
-        res.send({
-            banana,
-        });
+        // res.render('search', {
+        //     banana,
+        // });
+        res.send(banana)
     } catch (err) {
         console.log(err);
         res.status(400).json(err);
     }
+});
+// renders search page
+router.get('/search', async (req, res, next) => {
+    res.render('search');
+
 });
 
 module.exports = router;
