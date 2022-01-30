@@ -3,21 +3,21 @@ document.addEventListener("DOMContentLoaded", function () {
     var elems = document.querySelectorAll(".collapsible");
     var instances = M.Collapsible.init(elems);
 });
-
+// on click, sends post request to db and gets back object of recipes that include search ingredients
 const newFormHandler = async (event) => {
     event.preventDefault();
-    const ingredientsVal = document.querySelector('#recipe').value;
-    const ingredients = ingredientsVal.charAt(0).toUpperCase() + ingredientsVal.slice(1);
+    const ingredientsVal = document.querySelector('#recipe').value; // value of input field 
+    const ingredients = ingredientsVal.charAt(0).toUpperCase() + ingredientsVal.slice(1); // changes first letter to uppercase
     if (ingredients) {
-        const response = await fetch('/search', {
+        const response = await fetch('/search', { // fetches db route
             method: 'POST',
-            body: JSON.stringify({ ingredients }),
+            body: JSON.stringify({ ingredients }), // sends ingredient as body
             headers: {
                 'Content-Type': 'application/json',
             },
         })
             .then(response => response.json())
-            .then(data => {
+            .then(data => { // gets data back and appends information to HTML
                 for (let i = 0; i < data.length; i++) {
                     const recipesAppend = document.querySelector('.collapsible')
                     const recipeName = data[i].name;
@@ -144,9 +144,9 @@ const newFormHandler = async (event) => {
                 }
             })
             .catch((error) => {
-                console.error('Error:', error);
+                console.error('Error:', error); // if there's an error, print in console
             });
     }
 };
 
-document.querySelector('.form-submit').addEventListener('click', newFormHandler);
+document.querySelector('.form-submit').addEventListener('click', newFormHandler); 

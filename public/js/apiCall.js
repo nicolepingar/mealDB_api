@@ -271,7 +271,7 @@ function getMeal(mealInput) {
                         },
                     });
                     if (response.ok) {
-                        alert(`${data.meals[index].strMeal} added to the database.`)
+                        alert(`${data.meals[index].strMeal} added to the database.`) // sends alert to let user know recipe was added
                     } else {
                         alert('Failed to add recipe.'); // if response is not ok, alert user
                     }
